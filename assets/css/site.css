@@ -129,6 +129,14 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
   gap: 16px;
+  container-type: inline-size;
+}
+@container (min-width: 696px) {
+  .app-grid > .app-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc((100% - 16px) / 2);
+  }
 }
 .app-card {
   display: flex;
