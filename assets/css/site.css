@@ -1,14 +1,15 @@
 /* Steadyline Labs: tokens and layout per BRAND.md */
 :root {
   color-scheme: light dark;
-  --bg: #F6F7F9;
+  --bg: #F7F6F2;
   --surface: #FFFFFF;
   --ink: #15181D;
   --ink2: #4B525D;
   --muted: #646C78;
-  --line: #E2E5EA;
-  --line2: #C9CED6;
-  --chip: #EEF0F3;
+  --line: #E7E4DE;
+  --line2: #CFCBC3;
+  --chip: #EFEDE8;
+  --shadow: 0 1px 2px rgba(28, 24, 18, .04), 0 4px 14px rgba(28, 24, 18, .035);
   --pad-x: clamp(16px, 5vw, 48px);
   --head: "Instrument Sans", system-ui, sans-serif;
   --body: "IBM Plex Sans", system-ui, sans-serif;
@@ -16,14 +17,15 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0E1013;
-    --surface: #16191E;
+    --bg: #100F0E;
+    --surface: #181715;
     --ink: #ECEEF1;
     --ink2: #A6ADB8;
     --muted: #8A929E;
-    --line: #252A31;
-    --line2: #3A414B;
-    --chip: #1D2127;
+    --line: #2A2825;
+    --line2: #4A4742;
+    --chip: #23211E;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .30);
   }
 }
 
@@ -33,6 +35,7 @@ html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
+  overflow-x: clip;
   background: var(--bg);
   color: var(--ink);
   font-family: var(--body);
@@ -114,30 +117,29 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; }
 /* Hero */
 .hero { padding-top: clamp(48px, 9vw, 112px); padding-bottom: clamp(40px, 6vw, 64px); }
 
-/* Line motif */
+/* Line motif: the line is the road, the point is the traveller on it. Static by design. */
 .line-motif { margin-top: 40px; }
 .line-motif .point { width: 8px; height: 8px; border-radius: 2px; background: var(--ink); margin-bottom: 6px; }
 .line-motif .line { height: 2px; background: var(--ink); }
+/* Hero: the road starts at the text column and runs on past the right edge of the window. */
+.hero .line-motif {
+  margin-top: clamp(28px, 4vw, 44px);
+  width: calc(100% + (100vw - 100%) / 2);
+}
+.hero .line-motif .point { width: 9px; height: 9px; margin-bottom: 2px; }
 
-/* Sections */
-.section { border-top: 1px solid var(--line); }
+/* Sections: separated by space only, so the road is the one full line on the page */
 .section > .wrap { padding-top: clamp(40px, 6vw, 64px); padding-bottom: clamp(40px, 6vw, 64px); }
-#apps .section-label { margin-bottom: 24px; }
+#products .section-label { margin-bottom: 24px; }
 
 /* App cards */
 .app-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
   gap: 16px;
   container-type: inline-size;
 }
-@container (min-width: 696px) {
-  .app-grid > .app-card:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: calc((100% - 16px) / 2);
-  }
-}
+.app-grid > .app-card--wide, .app-grid > .lab-row { grid-column: 1 / -1; }
 .app-card {
   display: flex;
   flex-direction: column;
@@ -146,7 +148,36 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; }
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: clamp(20px, 3vw, 28px);
+  box-shadow: var(--shadow);
 }
+/* Tether Link Utility, the one product that is out: full width, links bottom right */
+.app-card--wide {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px 40px;
+}
+.app-card--wide .app-head { flex: 1 1 380px; min-width: 0; }
+.app-card--wide .app-head p { max-width: 480px; }
+.app-card--wide .badges { margin-top: 18px; }
+.app-card--wide .app-links { margin: 0; padding: 0; border-top: 0; }
+/* Coming from the lab: one compact row for apps still in development */
+.lab-row {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+  padding: clamp(16px, 2.4vw, 22px) clamp(20px, 3vw, 28px);
+}
+.lab-icons { display: flex; gap: 8px; flex: none; }
+.lab-icons img, .lab-icons video { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; display: block; }
+.lab-icons video { background: var(--chip); }
+.lab-icons video::-webkit-media-controls,
+.lab-icons video::-webkit-media-controls-start-playback-button { display: none !important; -webkit-appearance: none; }
+.lab-text { flex: 1 1 220px; min-width: 0; }
+.lab-text h3 { font-size: 19px; line-height: 1.25; }
+.lab-text p { margin: 3px 0 0; font-size: 15px; color: var(--muted); }
 .app-head { display: flex; gap: 16px; align-items: flex-start; }
 .app-head img, .app-head video { width: 64px; height: 64px; border-radius: 14px; flex: none; }
 .app-head video { display: block; object-fit: cover; background: var(--chip); }
@@ -205,7 +236,7 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; }
 }
 
 /* Footer */
-.site-footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+.site-footer { color: var(--muted); font-size: 14px; }
 .site-footer .wrap {
   display: flex;
   flex-wrap: wrap;
