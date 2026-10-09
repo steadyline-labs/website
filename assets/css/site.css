@@ -150,6 +150,9 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; }
 .app-head { display: flex; gap: 16px; align-items: flex-start; }
 .app-head img, .app-head video { width: 64px; height: 64px; border-radius: 14px; flex: none; }
 .app-head video { display: block; object-fit: cover; background: var(--chip); }
+/* iOS (Low Power Mode, data saver) can block autoplay and draws a large play button over the icon; keep the poster clean. */
+.app-head video::-webkit-media-controls,
+.app-head video::-webkit-media-controls-start-playback-button { display: none !important; -webkit-appearance: none; }
 .app-tile { width: 64px; height: 64px; border-radius: 14px; flex: none; border: 1px solid var(--line); background: repeating-linear-gradient(135deg, var(--chip) 0 6px, var(--line) 6px 12px); }
 .app-head p { margin: 6px 0 0; color: var(--ink2); }
 .badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
