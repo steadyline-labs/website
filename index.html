@@ -176,7 +176,11 @@
 
         <article class="app-card">
           <div class="app-head">
-            <img src="/assets/apps/dev-4.png" alt="App in development" width="64" height="64" loading="lazy">
+            <video id="dev-4-anim" width="64" height="64" autoplay muted loop playsinline preload="auto" poster="/assets/apps/dev-4.png" role="img" aria-label="App in development">
+              <source src="/assets/apps/dev-4.webm" type="video/webm">
+              <source src="/assets/apps/dev-4.mp4" type="video/mp4">
+            </video>
+            <script>(function(){var v=document.getElementById('dev-4-anim'),m=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)');function still(){v.removeAttribute('autoplay');v.pause();while(v.firstElementChild)v.removeChild(v.firstElementChild);v.load();}if(m&&m.matches)still();else if(m&&m.addEventListener)m.addEventListener('change',function(e){if(e.matches)still();});})();</script>
             <div>
               <h3>In development</h3>
               <p>A new app from the lab.</p>

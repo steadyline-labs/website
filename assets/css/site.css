@@ -148,7 +148,8 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; }
   padding: clamp(20px, 3vw, 28px);
 }
 .app-head { display: flex; gap: 16px; align-items: flex-start; }
-.app-head img { width: 64px; height: 64px; border-radius: 14px; flex: none; }
+.app-head img, .app-head video { width: 64px; height: 64px; border-radius: 14px; flex: none; }
+.app-head video { display: block; object-fit: cover; background: var(--chip); }
 .app-tile { width: 64px; height: 64px; border-radius: 14px; flex: none; border: 1px solid var(--line); background: repeating-linear-gradient(135deg, var(--chip) 0 6px, var(--line) 6px 12px); }
 .app-head p { margin: 6px 0 0; color: var(--ink2); }
 .badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
