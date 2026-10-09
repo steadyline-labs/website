@@ -165,6 +165,7 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; }
   padding-top: 20px;
   border-top: 1px solid var(--line);
 }
+.app-note { color: var(--muted); }
 
 /* About / Contact rows */
 .row { display: flex; flex-wrap: wrap; gap: 16px 32px; }
