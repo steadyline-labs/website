@@ -10,6 +10,8 @@
   --line2: #CFCBC3;
   --chip: #EFEDE8;
   --shadow: 0 1px 2px rgba(28, 24, 18, .04), 0 4px 14px rgba(28, 24, 18, .035);
+  --line-live: #D9D5CD;
+  --shadow-live: 0 1px 2px rgba(28, 24, 18, .05), 0 10px 30px rgba(28, 24, 18, .07);
   --pad-x: clamp(16px, 5vw, 48px);
   --head: "Instrument Sans", system-ui, sans-serif;
   --body: "IBM Plex Sans", system-ui, sans-serif;
@@ -26,6 +28,8 @@
     --line2: #4A4742;
     --chip: #23211E;
     --shadow: 0 1px 2px rgba(0, 0, 0, .30);
+    --line-live: #3A3733;
+    --shadow-live: 0 1px 2px rgba(0, 0, 0, .30), 0 10px 30px rgba(0, 0, 0, .30);
   }
 }
 
@@ -35,7 +39,6 @@ html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  overflow-x: clip;
   background: var(--bg);
   color: var(--ink);
   font-family: var(--body);
@@ -121,11 +124,9 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; }
 .line-motif { margin-top: 40px; }
 .line-motif .point { width: 8px; height: 8px; border-radius: 2px; background: var(--ink); margin-bottom: 6px; }
 .line-motif .line { height: 2px; background: var(--ink); }
-/* Hero: the road starts at the text column and runs on past the right edge of the window. */
-.hero .line-motif {
-  margin-top: clamp(28px, 4vw, 44px);
-  width: calc(100% + (100vw - 100%) / 2);
-}
+/* Hero: the road spans the content column and fades out over its last 40%, carrying on into the distance. */
+.hero .line-motif { margin-top: clamp(28px, 4vw, 44px); }
+.hero .line-motif .line { background: linear-gradient(90deg, var(--ink) 0%, var(--ink) 62%, transparent 100%); }
 .hero .line-motif .point { width: 9px; height: 9px; margin-bottom: 2px; }
 
 /* Sections: separated by space only, so the road is the one full line on the page */
@@ -162,6 +163,8 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; }
 .app-card--wide .app-head p { max-width: 480px; }
 .app-card--wide .badges { margin-top: 18px; }
 .app-card--wide .app-links { margin: 0; padding: 0; border-top: 0; }
+/* The released product stands out without motion: deeper soft shadow, slightly darker border */
+.app-card--wide { border-color: var(--line-live); box-shadow: var(--shadow-live); }
 /* Coming from the lab: one compact row for apps still in development */
 .lab-row {
   flex-direction: row;
