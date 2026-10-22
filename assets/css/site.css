@@ -308,53 +308,46 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; }
 @media (max-width: 380px) { .launch-island { font-size: 13px; gap: 6px; } }
 .confetti-canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 50; }
 
-/* Card hero preview: floats above the card on mouse hover/focus; sits on top of the card on touch screens */
+/* Card hero preview: always inside its own card. Mouse: the image opens at the top of the card on hover/focus. Touch: it sits there permanently. */
 .app-card { --card-pad: clamp(20px, 3vw, 28px); }
-.app-hero { display: none; }
-@media (hover: hover) and (pointer: fine) {
-  .has-hero { position: relative; }
-  .app-hero {
-    display: block;
-    position: absolute;
-    left: var(--card-pad);
-    bottom: calc(100% - 20px);
-    width: 320px;
-    max-width: calc(100% - 2 * var(--card-pad));
-    height: auto;
-    aspect-ratio: 1024 / 500;
-    object-fit: cover;
-    border-radius: 12px;
-    border: 1px solid var(--line);
-    box-shadow: 0 2px 4px rgba(28, 24, 18, .06), 0 16px 36px rgba(28, 24, 18, .14);
-    pointer-events: none;
-    z-index: 5;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(6px);
-    transition: opacity 0s, transform 0s, visibility 0s;
-  }
-  .has-hero:hover .app-hero,
-  .has-hero:focus-within .app-hero {
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    transition: opacity 180ms ease-out 250ms, transform 180ms ease-out 250ms, visibility 0s 250ms;
-  }
+.app-hero-wrap {
+  display: grid;
+  flex: none;
+  width: calc(100% + 2 * var(--card-pad));
+  margin: calc(-1 * var(--card-pad)) calc(-1 * var(--card-pad)) 0;
+  overflow: hidden;
+  border-radius: 15px 15px 0 0;
 }
-@media (hover: none), (pointer: coarse) {
-  .app-hero {
-    display: block;
-    width: calc(100% + 2 * var(--card-pad));
-    max-width: none;
-    height: auto;
-    aspect-ratio: 1024 / 500;
-    object-fit: cover;
-    margin: calc(-1 * var(--card-pad)) calc(-1 * var(--card-pad)) 0;
-    border-radius: 15px 15px 0 0;
-    flex: 0 0 auto;
+.app-hero-wrap > div { min-height: 0; overflow: hidden; background: var(--hero-bg, transparent); }
+.app-card--wide .app-hero-wrap { flex-basis: calc(100% + 2 * var(--card-pad)); }
+.app-hero { display: block; width: 100%; height: auto; aspect-ratio: 1024 / 500; object-fit: cover; }
+@media (hover: hover) and (pointer: fine) {
+  .app-hero-wrap {
+    grid-template-rows: 0fr;
+    margin-top: 0;
+    margin-bottom: -20px;
+    transition: grid-template-rows 0s, margin 0s;
   }
-  .app-card--wide .app-hero { flex-basis: calc(100% + 2 * var(--card-pad)); }
+  .app-hero { opacity: 0; transition: opacity 0s; }
+  .has-hero:hover .app-hero-wrap,
+  .has-hero:focus-within .app-hero-wrap {
+    grid-template-rows: 1fr;
+    margin-top: calc(-1 * var(--card-pad));
+    margin-bottom: 0;
+    transition: grid-template-rows 220ms ease-out 250ms, margin 220ms ease-out 250ms;
+  }
+  /* Wide card is a wrapping flex row: an empty line still gets the 20px row gap, so the top padding gives it back */
+  .app-card--wide.has-hero { padding-top: calc(var(--card-pad) - 20px); }
+  .app-card--wide .app-hero-wrap { margin-bottom: 0; }
+  .app-card--wide.has-hero:hover .app-hero-wrap,
+  .app-card--wide.has-hero:focus-within .app-hero-wrap { margin-top: calc(20px - var(--card-pad)); }
+  /* The wide card opens a calm 280px band so the page below does not jump far */
+  .app-card--wide .app-hero { max-height: 280px; object-fit: contain; }
+  .has-hero:hover .app-hero,
+  .has-hero:focus-within .app-hero { opacity: 1; transition: opacity 180ms ease-out 330ms; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .has-hero .app-hero, .has-hero:hover .app-hero, .has-hero:focus-within .app-hero { transform: none; transition: none; }
+  .app-hero-wrap, .app-hero,
+  .has-hero:hover .app-hero-wrap, .has-hero:hover .app-hero,
+  .has-hero:focus-within .app-hero-wrap, .has-hero:focus-within .app-hero { transition: none; }
 }
