@@ -265,3 +265,96 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; }
 .notfound p { margin: 16px 0 0; color: var(--ink2); }
 .notfound .line-motif { max-width: 480px; }
 .notfound .back { display: inline-block; margin-top: 32px; }
+
+/* Launch island: a calm pill above the hero title, one config per launch in index.html */
+.launch-island {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  height: 40px;
+  padding: 0 6px 0 8px;
+  margin-bottom: clamp(24px, 3vw, 32px);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  font-size: 15px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.launch-island[hidden] { display: none; }
+.launch-icon { width: 24px; height: 24px; border-radius: 6px; flex: none; }
+.launch-text { font-weight: 500; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.launch-link { flex: none; }
+.launch-sep { width: 1px; height: 18px; background: var(--line); flex: none; }
+.launch-close {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  flex: none;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+.launch-close:hover { background: var(--chip); color: var(--ink); }
+.launch-close:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
+.launch-close svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+@media (max-width: 600px) { .launch-island { font-size: 14px; } }
+@media (max-width: 380px) { .launch-island { font-size: 13px; gap: 6px; } }
+.confetti-canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 50; }
+
+/* Card hero preview: floats above the card on mouse hover/focus; sits on top of the card on touch screens */
+.app-card { --card-pad: clamp(20px, 3vw, 28px); }
+.app-hero { display: none; }
+@media (hover: hover) and (pointer: fine) {
+  .has-hero { position: relative; }
+  .app-hero {
+    display: block;
+    position: absolute;
+    left: var(--card-pad);
+    bottom: calc(100% - 20px);
+    width: 320px;
+    max-width: calc(100% - 2 * var(--card-pad));
+    height: auto;
+    aspect-ratio: 1024 / 500;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    box-shadow: 0 2px 4px rgba(28, 24, 18, .06), 0 16px 36px rgba(28, 24, 18, .14);
+    pointer-events: none;
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity 0s, transform 0s, visibility 0s;
+  }
+  .has-hero:hover .app-hero,
+  .has-hero:focus-within .app-hero {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: opacity 180ms ease-out 250ms, transform 180ms ease-out 250ms, visibility 0s 250ms;
+  }
+}
+@media (hover: none), (pointer: coarse) {
+  .app-hero {
+    display: block;
+    width: calc(100% + 2 * var(--card-pad));
+    max-width: none;
+    height: auto;
+    aspect-ratio: 1024 / 500;
+    object-fit: cover;
+    margin: calc(-1 * var(--card-pad)) calc(-1 * var(--card-pad)) 0;
+    border-radius: 15px 15px 0 0;
+    flex: 0 0 auto;
+  }
+  .app-card--wide .app-hero { flex-basis: calc(100% + 2 * var(--card-pad)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .has-hero .app-hero, .has-hero:hover .app-hero, .has-hero:focus-within .app-hero { transform: none; transition: none; }
+}

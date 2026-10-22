@@ -25,6 +25,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@600&family=IBM+Plex+Sans:wght@400;500&display=swap">
 <link rel="stylesheet" href="/assets/css/site.css">
+<script src="/assets/js/launch.js" defer></script>
 </head>
 <body>
 
@@ -45,6 +46,12 @@
 <main>
   <section class="hero">
     <div class="wrap">
+      <!-- Launch island: edit only this config for the next launch (new id shows it again) -->
+      <script type="application/json" id="launch-config">
+        {"id": "bilat-android-2026-10", "icon": "/assets/apps/bilat.png", "text": "Bil At! is live on Google Play", "linkLabel": "Get it ↗", "href": "https://play.google.com/store/apps/details?id=com.steadylinelabs.bilat", "until": "2026-11-30", "colors": ["#15171A", "#4FB0E3", "#BFE2F4"]}
+      </script>
+      <div class="launch-island" id="launch-island" role="region" aria-label="Launch announcement" hidden></div>
+      <script>(function(){var el=document.getElementById('launch-island'),c;try{c=JSON.parse(document.getElementById('launch-config').textContent);}catch(e){return;}var d=null;try{d=localStorage.getItem('slab-launch-dismissed');}catch(e){}if(d===c.id||Date.now()>Date.parse(c.until+'T23:59:59'))return;function n(t,cl,tx){var e=document.createElement(t);if(cl)e.className=cl;if(tx)e.textContent=tx;return e;}var i=n('img','launch-icon');i.src=c.icon;i.alt='';i.width=24;i.height=24;var a=n('a','launch-link',c.linkLabel);a.href=c.href;a.rel='noopener';var b=n('button','launch-close');b.type='button';b.setAttribute('aria-label','Dismiss announcement');b.innerHTML='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>';el.append(i,n('span','launch-text',c.text),a,n('span','launch-sep'),b);el.hidden=false;})();</script>
       <h1>Steadyline Labs</h1>
       <p class="tagline">We start ideas small and grow the ones people keep.</p>
       <div class="line-motif" aria-hidden="true"><div class="point"></div><div class="line"></div></div>
@@ -66,7 +73,8 @@
       <div class="app-grid">
 
         <!-- App: Tether Link Utility (copy block) -->
-        <article class="app-card app-card--wide">
+        <article class="app-card app-card--wide has-hero">
+          <img class="app-hero" src="/assets/heroes/tether-link-utility.webp" alt="" width="800" height="391" loading="lazy" decoding="async">
           <div class="app-head">
             <img src="/assets/apps/tether-link-utility.png" alt="" width="64" height="64">
             <div>
@@ -86,7 +94,8 @@
         <!-- /App: Tether Link Utility -->
 
         <!-- App: BilAt (copy block) -->
-        <article class="app-card">
+        <article class="app-card has-hero">
+          <img class="app-hero" src="/assets/heroes/bilat.webp" alt="" width="800" height="391" loading="lazy" decoding="async">
           <div class="app-head">
             <img src="/assets/apps/bilat.png" alt="" width="64" height="64">
             <div>
