@@ -306,7 +306,10 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; }
 .launch-close svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
 @media (max-width: 600px) { .launch-island { font-size: 14px; } }
 @media (max-width: 380px) { .launch-island { font-size: 13px; gap: 6px; } }
-.confetti-canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 50; }
+/* Launch fireworks: one canvas behind the hero text, never over the nav */
+.hero { position: relative; overflow: hidden; }
+.hero > .wrap { position: relative; z-index: 1; }
+.fireworks-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
 
 /* Card hero preview: always inside its own card. Mouse: the image opens at the top of the card on hover/focus. Touch: it sits there permanently. */
 .app-card { --card-pad: clamp(20px, 3vw, 28px); }
