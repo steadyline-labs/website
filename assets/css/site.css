@@ -105,7 +105,9 @@ h1 { font-size: clamp(44px, 9vw, 88px); line-height: 1.02; letter-spacing: -0.02
   line-height: 1.4;
   color: var(--ink2);
   max-width: 34ch;
+  text-wrap: balance;
 }
+@media (min-width: 768px) { .tagline { max-width: none; white-space: nowrap; } }
 .section-label {
   font-family: var(--body);
   font-weight: 500;
