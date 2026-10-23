@@ -2,9 +2,10 @@
   "name": "Steadyline Labs",
   "short_name": "Steadyline",
   "start_url": "/",
+  "description": "Steadyline Labs is an independent lab for ideas.",
   "display": "browser",
-  "background_color": "#F6F7F9",
-  "theme_color": "#15181D",
+  "background_color": "#F7F6F2",
+  "theme_color": "#F7F6F2",
   "icons": [
     {
       "src": "/assets/icons/icon-192.png",
