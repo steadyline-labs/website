@@ -384,3 +384,27 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; }
   .has-hero:hover .app-hero-wrap, .has-hero:hover .app-hero,
   .has-hero:focus-within .app-hero-wrap, .has-hero:focus-within .app-hero { transition: none; }
 }
+
+/* App pages (/tether-link-utility/, /bil-at/): one product per page, same tokens and cards as the home page */
+.app-card h3 a { text-decoration: none; }
+.app-card h3 a:hover { text-decoration: underline; text-decoration-color: var(--line2); }
+.crumbs { margin: 0 0 28px; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 4px 8px; font-size: 14px; color: var(--muted); }
+.crumbs li + li::before { content: "/"; margin-right: 8px; color: var(--line2); }
+.crumbs a { color: var(--ink2); font-weight: 400; }
+.app-intro { display: flex; flex-wrap: wrap; gap: 20px 24px; align-items: center; }
+.app-intro img { width: 96px; height: 96px; border-radius: 22px; flex: none; box-shadow: var(--shadow); }
+.app-intro > div { flex: 1 1 260px; min-width: 0; }
+.app-intro .lede { margin: 10px 0 0; font-size: clamp(18px, 2.1vw, 21px); line-height: 1.45; color: var(--ink2); }
+.app-intro .badges { margin-top: 16px; }
+.cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 32px; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 12px; background: var(--ink); color: var(--bg); text-decoration: none; font-weight: 500; }
+.btn-primary:hover { opacity: .88; }
+.app-shot { margin: 40px 0 0; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: var(--hero-bg, var(--chip)); max-width: 800px; }
+.app-shot img { width: 100%; height: auto; aspect-ratio: 800 / 391; object-fit: cover; }
+.facts { margin: 8px 0 0; padding: 0; display: grid; grid-template-columns: max-content 1fr; gap: 10px 24px; max-width: 62ch; }
+.facts dt { color: var(--muted); font-size: 14px; padding-top: 2px; }
+.facts dd { margin: 0; }
+@media (max-width: 480px) { .facts { grid-template-columns: 1fr; gap: 2px; } .facts dd { margin-bottom: 10px; } }
+.prose h2 { font-size: 22px; line-height: 1.25; margin: 40px 0 12px; }
+.page .back-block { margin-top: 48px; max-width: 480px; }
+.page .back-block .line-motif { margin: 0 0 20px; }
