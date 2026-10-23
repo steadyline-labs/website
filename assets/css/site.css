@@ -409,15 +409,54 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; }
 .page .back-block { margin-top: 48px; max-width: 480px; }
 .page .back-block .line-motif { margin: 0 0 20px; }
 
-/* Lab notes (/notes/): short dated entries, newest first */
-.notes { list-style: none; margin: 40px 0 0; padding: 0; max-width: 62ch; }
-.note { display: grid; grid-template-columns: 7.5em 1fr; gap: 4px 24px; padding: 20px 0; border-top: 1px solid var(--line); scroll-margin-top: 24px; }
-.note:last-child { border-bottom: 1px solid var(--line); }
-.note time { color: var(--muted); font-size: 14px; padding-top: 3px; }
+/* Lab notes (/notes/): vertical timeline, newest first.
+   One rail (the brand line, stood upright) with a big "now" circle on top,
+   a small typed circle per note, and the brand square closing the line. */
+.icon-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.timeline {
+  --date-w: 9.5em; --col-gap: 20px; --rail: 48px; --node: 32px;
+  --rail-x: calc(var(--date-w) + var(--col-gap) + var(--rail) / 2);
+  position: relative; margin: 40px 0 0; padding-bottom: 8px; max-width: 72ch;
+}
+.timeline::before { content: ""; position: absolute; left: calc(var(--rail-x) - 1px); top: 24px; bottom: 8px; width: 2px; background: var(--line2); }
+.timeline::after { content: ""; position: absolute; left: calc(var(--rail-x) - 4px); bottom: 0; width: 8px; height: 8px; border-radius: 2px; background: var(--ink); }
+.timeline-now, .note {
+  position: relative; display: grid; column-gap: var(--col-gap);
+  grid-template-columns: var(--date-w) var(--rail) minmax(0, 1fr);
+  grid-template-areas: "meta node body";
+}
+.timeline-now { padding-bottom: 36px; }
+.notes { list-style: none; margin: 0; padding: 0; }
+.note { padding-bottom: 30px; scroll-margin-top: 24px; }
+.note-node, .now-node { grid-area: node; justify-self: center; position: relative; z-index: 1; display: grid; place-items: center; border-radius: 50%; color: var(--ink); background: var(--surface); }
+.note-node { width: var(--node); height: var(--node); border: 1.5px solid var(--line2); }
+.now-node { width: 48px; height: 48px; border: 2px solid var(--ink); box-shadow: var(--shadow); }
+.note-node svg, .now-node svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.now-node svg { width: 24px; height: 24px; }
+.note-node .solid, .now-node .solid, #i-brand rect, #i-teaser path { fill: currentColor; stroke: none; }
+.note--launch .note-node { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.note--brand .note-node, .note--teaser .note-node { background: var(--chip); }
+.note-meta { grid-area: meta; margin: 0; padding-top: 5px; display: flex; flex-direction: column; align-items: flex-end; text-align: right; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.timeline-now .note-meta { padding-top: 12px; font-family: var(--head); font-weight: 600; color: var(--ink2); }
+.note-type { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; line-height: 1.5; }
+.note-body { grid-area: body; min-width: 0; padding-top: 3px; }
 .note h2 { font-size: 19px; line-height: 1.3; letter-spacing: -0.01em; }
 .note h2 a { text-decoration: none; }
 .note h2 a:hover { text-decoration: underline; text-decoration-color: var(--line2); }
-.note p { margin: 6px 0 0; color: var(--ink2); }
-.note:target { background: var(--chip); margin: 0 -12px; padding-left: 12px; padding-right: 12px; border-radius: 8px; }
-@media (max-width: 480px) { .note { grid-template-columns: 1fr; } }
+.note p:not(.note-meta) { margin: 6px 0 0; color: var(--ink2); }
+.now-title { margin: 0; padding-top: 9px; font-family: var(--head); font-weight: 600; font-size: 19px; line-height: 1.3; }
+.now-sub { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+.note:target .note-body { background: var(--chip); border-radius: 8px; margin: -6px -10px 0; padding: 9px 10px 8px; }
+@media (max-width: 600px) {
+  .timeline { --date-w: 0px; --col-gap: 12px; --rail: 40px; --rail-x: calc(var(--rail) / 2); }
+  .timeline-now, .note { grid-template-columns: var(--rail) minmax(0, 1fr); grid-template-areas: "node meta" "node body"; }
+  .note-meta { flex-direction: row; flex-wrap: wrap; gap: 0 10px; align-items: baseline; text-align: left; }
+  .timeline-now .note-meta { padding-top: 0; }
+  .timeline-now .note-body { padding-top: 0; }
+  .now-node { width: 40px; height: 40px; }
+  .now-node svg { width: 20px; height: 20px; }
+  .now-title { padding-top: 0; }
+  .note-body { padding-top: 0; }
+  .timeline-now { padding-bottom: 28px; }
+}
 .about-more { margin: 16px 0 0; }
