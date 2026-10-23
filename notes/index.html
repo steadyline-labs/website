@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab notes · Steadyline Labs</title>
+<meta name="description" content="Short, dated notes from Steadyline Labs: what we shipped, changed and learned. Ideas start small, and we keep the ones people keep.">
+<link rel="canonical" href="https://steadylinelabs.com/notes/">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F7F6F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#100F0E" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Steadyline Labs">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://steadylinelabs.com/notes/">
+<meta property="og:title" content="Lab notes · Steadyline Labs">
+<meta property="og:description" content="What we shipped, changed and learned, newest first.">
+<meta property="og:image" content="https://steadylinelabs.com/assets/og/steadyline-og-1200x630.png?v=2">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Steadyline Labs: We start ideas small and grow the ones people keep.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lab notes · Steadyline Labs">
+<meta name="twitter:description" content="What we shipped, changed and learned, newest first.">
+<meta name="twitter:image" content="https://steadylinelabs.com/assets/og/steadyline-og-1200x630.png?v=2">
+<meta name="twitter:image:alt" content="Steadyline Labs: We start ideas small and grow the ones people keep.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Blog",
+      "@id": "https://steadylinelabs.com/notes/#blog",
+      "url": "https://steadylinelabs.com/notes/",
+      "name": "Lab notes",
+      "description": "Short, dated notes from Steadyline Labs: what we shipped, changed and learned.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://steadylinelabs.com/#website"
+      },
+      "publisher": {
+        "@id": "https://steadylinelabs.com/#organization"
+      },
+      "dateModified": "2026-10-23",
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "@id": "https://steadylinelabs.com/notes/#youtube-steadyline-labs",
+          "url": "https://steadylinelabs.com/notes/#youtube-steadyline-labs",
+          "headline": "Our YouTube channel is now Steadyline Labs",
+          "description": "The channel is now @steadylinelabs, so videos for every app live in one place. The Tether Link Utility how-to videos are already there.",
+          "datePublished": "2026-10-23",
+          "inLanguage": "en",
+          "author": {
+            "@id": "https://steadylinelabs.com/#organization"
+          },
+          "publisher": {
+            "@id": "https://steadylinelabs.com/#organization"
+          },
+          "isPartOf": {
+            "@id": "https://steadylinelabs.com/notes/#blog"
+          }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://steadylinelabs.com/notes/#bil-at-first-updates",
+          "url": "https://steadylinelabs.com/notes/#bil-at-first-updates",
+          "headline": "Bil At! gets its first updates from player feedback",
+          "description": "The first players told us what felt off, so the next updates fix it. A reward now takes one ad, and the replay button and arrow counter are easier to read.",
+          "datePublished": "2026-10-23",
+          "inLanguage": "en",
+          "author": {
+            "@id": "https://steadylinelabs.com/#organization"
+          },
+          "publisher": {
+            "@id": "https://steadylinelabs.com/#organization"
+          },
+          "isPartOf": {
+            "@id": "https://steadylinelabs.com/notes/#blog"
+          }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://steadylinelabs.com/notes/#tether-link-utility-windows-setup",
+          "url": "https://steadylinelabs.com/notes/#tether-link-utility-windows-setup",
+          "headline": "Tether Link Utility: one-file Windows setup",
+          "description": "Windows now has a setup file, so every app on the PC can use the phone's connection, not just the browser. The guide has new Windows and Mac videos.",
+          "datePublished": "2026-10-23",
+          "inLanguage": "en",
+          "author": {
+            "@id": "https://steadylinelabs.com/#organization"
+          },
+          "publisher": {
+            "@id": "https://steadylinelabs.com/#organization"
+          },
+          "isPartOf": {
+            "@id": "https://steadylinelabs.com/notes/#blog"
+          }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://steadylinelabs.com/notes/#lab-card-grew-up",
+          "url": "https://steadylinelabs.com/notes/#lab-card-grew-up",
+          "headline": "The little one in the lab card grew up a bit",
+          "description": "The animated icon in the \"Coming from the lab\" card on the home page moved to its next stage. It keeps growing as the app does.",
+          "datePublished": "2026-10-23",
+          "inLanguage": "en",
+          "author": {
+            "@id": "https://steadylinelabs.com/#organization"
+          },
+          "publisher": {
+            "@id": "https://steadylinelabs.com/#organization"
+          },
+          "isPartOf": {
+            "@id": "https://steadylinelabs.com/notes/#blog"
+          }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://steadylinelabs.com/notes/#bil-at-launch",
+          "url": "https://steadylinelabs.com/notes/#bil-at-launch",
+          "headline": "Bil At! is live on Google Play",
+          "description": "Bil At! is a quick-fire trivia game in Turkish: throw an arrow at a spinning board, and the number you hit picks the question. It went from first build to the store in under four weeks.",
+          "datePublished": "2026-10-22",
+          "inLanguage": "en",
+          "author": {
+            "@id": "https://steadylinelabs.com/#organization"
+          },
+          "publisher": {
+            "@id": "https://steadylinelabs.com/#organization"
+          },
+          "isPartOf": {
+            "@id": "https://steadylinelabs.com/notes/#blog"
+          }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://steadylinelabs.com/notes/#fathom-pulse-date",
+          "url": "https://steadylinelabs.com/notes/#fathom-pulse-date",
+          "headline": "Fathom Pulse has a launch date",
+          "description": "Fathom Pulse comes to Android and iOS on January 1, 2027. We would rather take the extra time than rush it.",
+          "datePublished": "2026-10-09",
+          "inLanguage": "en",
+          "author": {
+            "@id": "https://steadylinelabs.com/#organization"
+          },
+          "publisher": {
+            "@id": "https://steadylinelabs.com/#organization"
+          },
+          "isPartOf": {
+            "@id": "https://steadylinelabs.com/notes/#blog"
+          }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://steadylinelabs.com/notes/#tether-link-utility-free-plan",
+          "url": "https://steadylinelabs.com/notes/#tether-link-utility-free-plan",
+          "headline": "Tether Link Utility free plan: one device",
+          "description": "The free plan now shares your phone's data with one device at a time. Pro still covers up to five.",
+          "datePublished": "2026-10-01",
+          "inLanguage": "en",
+          "author": {
+            "@id": "https://steadylinelabs.com/#organization"
+          },
+          "publisher": {
+            "@id": "https://steadylinelabs.com/#organization"
+          },
+          "isPartOf": {
+            "@id": "https://steadylinelabs.com/notes/#blog"
+          }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://steadylinelabs.com/notes/#tether-link-utility-five-languages",
+          "url": "https://steadylinelabs.com/notes/#tether-link-utility-five-languages",
+          "headline": "tetherlinkutility.com in five languages",
+          "description": "The Tether Link Utility site now reads in English, Spanish, Hindi, Portuguese and Turkish. The app itself stays in English and Turkish.",
+          "datePublished": "2026-09-27",
+          "inLanguage": "en",
+          "author": {
+            "@id": "https://steadylinelabs.com/#organization"
+          },
+          "publisher": {
+            "@id": "https://steadylinelabs.com/#organization"
+          },
+          "isPartOf": {
+            "@id": "https://steadylinelabs.com/notes/#blog"
+          }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://steadylinelabs.com/notes/#steadylinelabs-com",
+          "url": "https://steadylinelabs.com/notes/#steadylinelabs-com",
+          "headline": "steadylinelabs.com is up",
+          "description": "One home for everything the lab makes. Tether Link Utility is on Android, with iOS on the way.",
+          "datePublished": "2026-09-26",
+          "inLanguage": "en",
+          "author": {
+            "@id": "https://steadylinelabs.com/#organization"
+          },
+          "publisher": {
+            "@id": "https://steadylinelabs.com/#organization"
+          },
+          "isPartOf": {
+            "@id": "https://steadylinelabs.com/notes/#blog"
+          }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://steadylinelabs.com/notes/#tetherlinkutility-com",
+          "url": "https://steadylinelabs.com/notes/#tetherlinkutility-com",
+          "headline": "Tether Link Utility gets its own website",
+          "description": "tetherlinkutility.com went live with setup guides and plain posts on how carrier hotspot limits work.",
+          "datePublished": "2026-09-16",
+          "inLanguage": "en",
+          "author": {
+            "@id": "https://steadylinelabs.com/#organization"
+          },
+          "publisher": {
+            "@id": "https://steadylinelabs.com/#organization"
+          },
+          "isPartOf": {
+            "@id": "https://steadylinelabs.com/notes/#blog"
+          }
+        }
+      ],
+      "breadcrumb": {
+        "@id": "https://steadylinelabs.com/notes/#breadcrumb"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://steadylinelabs.com/#organization",
+      "name": "Steadyline Labs",
+      "url": "https://steadylinelabs.com/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://steadylinelabs.com/notes/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Steadyline Labs",
+          "item": "https://steadylinelabs.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Lab notes",
+          "item": "https://steadylinelabs.com/notes/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@600&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css?v=20261023c">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Steadyline Labs home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect class="tile" width="64" height="64" rx="14"/><rect class="glyph" x="12" y="20" width="8" height="8" rx="2"/><rect class="glyph" x="12" y="36" width="40" height="8" rx="4"/></svg>
+      <span>Steadyline <span class="labs">Labs</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/#products">Products</a>
+      <a href="/notes/" aria-current="page">Lab notes</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="wrap">
+    <ol class="crumbs" aria-label="Breadcrumb">
+      <li><a href="/">Steadyline Labs</a></li>
+      <li aria-current="page">Lab notes</li>
+    </ol>
+
+    <h1>Lab notes</h1>
+    <div class="prose">
+      <p>Ideas start small here, and we keep the ones people keep. These are short notes on what we shipped, changed and learned along the way, newest first.</p>
+    </div>
+
+    <ol class="notes" reversed>
+      <li class="note" id="youtube-steadyline-labs">
+        <time datetime="2026-10-23">23 October 2026</time>
+        <div>
+          <h2><a href="#youtube-steadyline-labs">Our YouTube channel is now Steadyline Labs</a></h2>
+          <p>The channel is now <a href="https://www.youtube.com/@steadylinelabs" rel="noopener">@steadylinelabs</a>, so videos for every app live in one place. The Tether Link Utility how-to videos are already there.</p>
+        </div>
+      </li>
+      <li class="note" id="bil-at-first-updates">
+        <time datetime="2026-10-23">23 October 2026</time>
+        <div>
+          <h2><a href="#bil-at-first-updates">Bil At! gets its first updates from player feedback</a></h2>
+          <p>The first players told us what felt off, so the next updates fix it. A reward now takes one ad, and the replay button and arrow counter are easier to read.</p>
+        </div>
+      </li>
+      <li class="note" id="tether-link-utility-windows-setup">
+        <time datetime="2026-10-23">23 October 2026</time>
+        <div>
+          <h2><a href="#tether-link-utility-windows-setup">Tether Link Utility: one-file Windows setup</a></h2>
+          <p>Windows now has a setup file, so every app on the PC can use the phone's connection, not just the browser. The <a href="https://tetherlinkutility.com/blog/socks5-proxy-setup-windows-macos-ios.html" rel="noopener">guide</a> has new Windows and Mac videos.</p>
+        </div>
+      </li>
+      <li class="note" id="lab-card-grew-up">
+        <time datetime="2026-10-23">23 October 2026</time>
+        <div>
+          <h2><a href="#lab-card-grew-up">The little one in the lab card grew up a bit</a></h2>
+          <p>The animated icon in the "Coming from the lab" card on the <a href="/#products">home page</a> moved to its next stage. It keeps growing as the app does.</p>
+        </div>
+      </li>
+      <li class="note" id="bil-at-launch">
+        <time datetime="2026-10-22">22 October 2026</time>
+        <div>
+          <h2><a href="#bil-at-launch">Bil At! is live on Google Play</a></h2>
+          <p><a href="/bil-at/">Bil At!</a> is a quick-fire trivia game in Turkish: throw an arrow at a spinning board, and the number you hit picks the question. It went from first build to the store in under four weeks.</p>
+        </div>
+      </li>
+      <li class="note" id="fathom-pulse-date">
+        <time datetime="2026-10-09">9 October 2026</time>
+        <div>
+          <h2><a href="#fathom-pulse-date">Fathom Pulse has a launch date</a></h2>
+          <p>Fathom Pulse comes to Android and iOS on January 1, 2027. We would rather take the extra time than rush it.</p>
+        </div>
+      </li>
+      <li class="note" id="tether-link-utility-free-plan">
+        <time datetime="2026-10-01">1 October 2026</time>
+        <div>
+          <h2><a href="#tether-link-utility-free-plan">Tether Link Utility free plan: one device</a></h2>
+          <p>The free plan now shares your phone's data with one device at a time. Pro still covers up to five.</p>
+        </div>
+      </li>
+      <li class="note" id="tether-link-utility-five-languages">
+        <time datetime="2026-09-27">27 September 2026</time>
+        <div>
+          <h2><a href="#tether-link-utility-five-languages">tetherlinkutility.com in five languages</a></h2>
+          <p>The Tether Link Utility site now reads in English, Spanish, Hindi, Portuguese and Turkish. The app itself stays in English and Turkish.</p>
+        </div>
+      </li>
+      <li class="note" id="steadylinelabs-com">
+        <time datetime="2026-09-26">26 September 2026</time>
+        <div>
+          <h2><a href="#steadylinelabs-com">steadylinelabs.com is up</a></h2>
+          <p>One home for everything the lab makes. Tether Link Utility is on Android, with iOS on the way.</p>
+        </div>
+      </li>
+      <li class="note" id="tetherlinkutility-com">
+        <time datetime="2026-09-16">16 September 2026</time>
+        <div>
+          <h2><a href="#tetherlinkutility-com">Tether Link Utility gets its own website</a></h2>
+          <p><a href="https://tetherlinkutility.com/" rel="noopener">tetherlinkutility.com</a> went live with setup guides and plain posts on how carrier hotspot limits work.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="back-block">
+      <div class="line-motif" aria-hidden="true"><div class="point"></div><div class="line"></div></div>
+      <a href="/">Back to Steadyline Labs</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Steadyline Labs</span>
+    <nav aria-label="Site">
+      <a href="/notes/">Lab notes</a>
+      <a href="https://tetherlinkutility.com/privacy.html" rel="noopener">Tether Link Utility privacy</a>
+      <a href="https://fathompulse.app/privacy.html" rel="noopener">Fathom Pulse privacy</a>
+      <a href="https://bilat.app/gizlilik/" rel="noopener">Bil At! privacy</a>
+      <a href="/privacy/">Site privacy</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

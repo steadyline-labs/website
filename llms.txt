@@ -11,6 +11,7 @@
 - Homepage: https://steadylinelabs.com/
 - Tether Link Utility page: https://steadylinelabs.com/tether-link-utility/
 - Bil At! page: https://steadylinelabs.com/bil-at/
+- Lab notes: https://steadylinelabs.com/notes/ : short, dated notes on what the lab shipped, changed and learned, newest first. Each entry has its own anchor.
 - Site privacy: https://steadylinelabs.com/privacy/
 - Google Play developer page: https://play.google.com/store/apps/developer?id=Steadyline+Labs
 - YouTube: https://www.youtube.com/@steadylinelabs
