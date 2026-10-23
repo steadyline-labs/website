@@ -289,6 +289,34 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; }
 .launch-icon { width: 24px; height: 24px; border-radius: 6px; flex: none; }
 .launch-text { font-weight: 500; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 .launch-link { flex: none; }
+.launch-list { display: contents; list-style: none; margin: 0; padding: 0; }
+.launch-item { display: contents; }
+.launch-copy { display: contents; }
+.launch-note { display: none; }
+/* Two or more pieces of news: the pill grows into a small stacked card, one row per item, one dismiss for all */
+.launch-island.is-multi {
+  align-items: stretch;
+  height: auto;
+  padding: 0 6px 0 0;
+  border-radius: 20px;
+  white-space: normal;
+}
+.launch-island.is-multi .launch-list { display: block; min-width: 0; }
+.launch-island.is-multi .launch-item { display: flex; align-items: center; gap: 10px; padding: 10px 12px 10px 10px; }
+.launch-island.is-multi .launch-item + .launch-item { border-top: 1px solid var(--line); }
+.launch-island.is-multi .launch-copy { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1 1 auto; }
+.launch-island.is-multi .launch-text { overflow: visible; }
+.launch-island.is-multi .launch-note { display: block; color: var(--muted); font-size: 14px; line-height: 1.4; max-width: 52ch; text-wrap: pretty; }
+.launch-island.is-multi .launch-icon { align-self: flex-start; margin-top: -2px; }
+.launch-island.is-multi .launch-link { margin-left: 8px; white-space: nowrap; }
+.launch-island.is-multi .launch-sep { height: auto; margin: 10px 0; }
+.launch-island.is-multi .launch-close { align-self: flex-start; margin-top: 8px; }
+@media (max-width: 600px) {
+  .launch-island.is-multi .launch-item { flex-wrap: wrap; row-gap: 4px; padding-right: 8px; }
+  .launch-island.is-multi .launch-copy { flex-basis: calc(100% - 34px); }
+  .launch-island.is-multi .launch-link { margin-left: 34px; }
+  .launch-island.is-multi .launch-note { font-size: 13px; }
+}
 .launch-sep { width: 1px; height: 18px; background: var(--line); flex: none; }
 .launch-close {
   display: grid;
