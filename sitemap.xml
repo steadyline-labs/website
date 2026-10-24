@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://steadylinelabs.com/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-23</lastmod>
   </url>
   <url>
     <loc>https://steadylinelabs.com/tether-link-utility/</loc>
@@ -10,19 +10,11 @@
   </url>
   <url>
     <loc>https://steadylinelabs.com/bil-at/</loc>
-    <lastmod>2026-10-24</lastmod>
-    <video:video>
-      <video:thumbnail_loc>https://steadylinelabs.com/assets/video/bilat-promo-poster.webp</video:thumbnail_loc>
-      <video:title>Bil At! | Bozkırda bir okçunun hikâyesi</video:title>
-      <video:description>Bil At! tanıtım filmi: bozkırda bir okçunun hikâyesi. Hızlı cevapla, tam isabet ok at.</video:description>
-      <video:player_loc>https://www.youtube-nocookie.com/embed/9iJxf5ObJpw</video:player_loc>
-      <video:duration>41</video:duration>
-      <video:publication_date>2026-10-24T05:06:05+03:00</video:publication_date>
-    </video:video>
+    <lastmod>2026-10-23</lastmod>
   </url>
   <url>
     <loc>https://steadylinelabs.com/notes/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-23</lastmod>
   </url>
   <url>
     <loc>https://steadylinelabs.com/privacy/</loc>
