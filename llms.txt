@@ -4,7 +4,7 @@
 
 ## Products
 - Tether Link Utility: https://tetherlinkutility.com/ : share your phone's mobile data with laptops, tablets and other phones. QR setup, no root, no account. Android on Google Play (https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility); iOS coming soon. Overview: https://steadylinelabs.com/tether-link-utility/ . More detail: https://tetherlinkutility.com/llms.txt
-- Bil At!: https://bilat.app/ : a quick-fire trivia game in Turkish. Answer fast, aim true. Android on Google Play (https://play.google.com/store/apps/details?id=com.steadylinelabs.bilat); iOS coming soon. Turkish only. Overview: https://steadylinelabs.com/bil-at/
+- Bil At!: https://bilat.app/ : a quick-fire trivia game in Turkish. Answer fast, aim true. Android on Google Play (https://play.google.com/store/apps/details?id=com.steadylinelabs.bilat); iOS coming soon. Turkish only. Overview: https://steadylinelabs.com/bil-at/ . Promo video (Turkish, 41 s): https://www.youtube.com/shorts/9iJxf5ObJpw
 - Fathom Pulse: https://fathompulse.app/ : coming to Android and iOS on January 1, 2027. Details coming soon.
 
 ## Links

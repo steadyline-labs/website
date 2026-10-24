@@ -39,6 +39,7 @@
       "inLanguage": "en",
       "isPartOf": {"@id": "https://steadylinelabs.com/#website"},
       "about": {"@id": "https://bilat.app/#app"},
+      "video": {"@id": "https://bilat.app/#video"},
       "publisher": {"@id": "https://steadylinelabs.com/#organization"},
       "breadcrumb": {"@id": "https://steadylinelabs.com/bil-at/#breadcrumb"}
     },
@@ -59,6 +60,21 @@
       "sameAs": ["https://play.google.com/store/apps/details?id=com.steadylinelabs.bilat"],
       "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
       "author": {"@id": "https://steadylinelabs.com/#organization"},
+      "publisher": {"@id": "https://steadylinelabs.com/#organization"},
+      "trailer": {"@id": "https://bilat.app/#video"}
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://bilat.app/#video",
+      "name": "Bil At! | Bozkırda bir okçunun hikâyesi",
+      "description": "Bozkırda bir okçu, dönen hedef tahtası ve sorular: Bil At! tanıtım videosu. Oku at, dilimi vur, soruyu bil.",
+      "thumbnailUrl": ["https://steadylinelabs.com/assets/video/bilat-promo-poster.webp", "https://i.ytimg.com/vi/9iJxf5ObJpw/hqdefault.jpg"],
+      "uploadDate": "2026-10-24T05:06:05+03:00",
+      "duration": "PT41S",
+      "inLanguage": "tr",
+      "contentUrl": "https://www.youtube.com/shorts/9iJxf5ObJpw",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/9iJxf5ObJpw",
+      "about": {"@id": "https://bilat.app/#app"},
       "publisher": {"@id": "https://steadylinelabs.com/#organization"}
     },
     {
@@ -81,7 +97,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@600&family=IBM+Plex+Sans:wght@400;500&display=swap">
-<link rel="stylesheet" href="/assets/css/site.css?v=20261023d">
+<link rel="stylesheet" href="/assets/css/site.css?v=20261024a">
 </head>
 <body>
 
@@ -128,6 +144,18 @@
       <img src="/assets/heroes/bilat.webp" alt="Bil At! game screens: aim at the spinning board, then answer the question" width="800" height="391" decoding="async">
     </figure>
 
+    <section class="app-video" id="video" aria-labelledby="video-title">
+      <h2 id="video-title">Promo video</h2>
+      <p>An archer's story from the steppe, in Turkish. 41 seconds.</p>
+      <div class="yt" data-yt="9iJxf5ObJpw" data-title="Bil At! | Bozkırda bir okçunun hikâyesi">
+        <a class="yt-play" href="https://www.youtube.com/shorts/9iJxf5ObJpw" rel="noopener" aria-label="Play the Bil At! promo video, 41 seconds">
+          <img src="/assets/video/bilat-promo-poster.webp" width="720" height="1280" loading="lazy" decoding="async" alt="A frame from the Bil At! promo video: an archer drawing his bow on the steppe, a wolf pup sitting beside him">
+          <span class="yt-btn" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span>
+        </a>
+      </div>
+      <p class="yt-note">The video loads from YouTube only when you press play.</p>
+    </section>
+
     <div class="prose">
       <p>Bil At! is a free trivia game in Turkish with a twist: you throw an arrow at a spinning board before each question. Pull back and let go, and the number you hit picks the difficulty. 1 to 4 is easy, 5 to 8 is medium, 9 to 12 is hard.</p>
       <p>Then pick the right answer out of four within 20 seconds. A correct answer scores the number times ten. You start with 1,200 questions across 8 categories, from general knowledge and history to cinema and food, and every three correct answers the board speeds up.</p>
@@ -140,6 +168,7 @@
         <dt>Language</dt><dd>Turkish only</dd>
         <dt>Questions</dt><dd>1,200 questions in 8 categories, easy to hard</dd>
         <dt>Price</dt><dd>Free, supported by optional ads. No in-app purchases.</dd>
+        <dt>Video</dt><dd><a href="https://www.youtube.com/shorts/9iJxf5ObJpw" rel="noopener">Promo video on YouTube</a> (in Turkish, 41 seconds)</dd>
         <dt>Website</dt><dd><a href="https://bilat.app/" rel="noopener" hreflang="tr">bilat.app</a> (in Turkish, with the <a href="https://bilat.app/gizlilik/" rel="noopener" hreflang="tr">privacy policy</a>)</dd>
       </dl>
     </div>
@@ -150,6 +179,24 @@
     </div>
   </div>
 </main>
+<script>
+  // Click-to-play video: nothing loads from YouTube until the visitor presses play.
+  document.querySelectorAll('.yt').forEach(function (box) {
+    var link = box.querySelector('.yt-play');
+    if (!link) return;
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + box.dataset.yt + '?autoplay=1&playsinline=1&rel=0';
+      f.title = box.dataset.title;
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      f.allowFullscreen = true;
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      box.replaceChildren(f);
+      f.focus();
+    });
+  });
+</script>
 
 <footer class="site-footer">
   <div class="wrap">
