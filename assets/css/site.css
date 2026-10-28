@@ -205,6 +205,12 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; }
 .badge.available { background: var(--chip); color: var(--ink); }
 .badge.available::before { content: ""; width: 6px; height: 6px; background: var(--ink); }
 .badge.soon { border: 1px dashed var(--line2); color: var(--ink2); padding: 3px 11px; }
+.badge.new { background: #1A1A1A; color: #FFFFFF; }
+@media (prefers-color-scheme: dark) {
+  .badge.new { background: #F2F2F2; color: #111111; }
+  .app-card, .launch-island { border-color: rgba(255, 255, 255, .08); }
+}
+@media (max-width: 600px) { .app-card { padding: 16px; } }
 .app-links {
   display: flex;
   flex-wrap: wrap;
@@ -294,31 +300,33 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; }
 .launch-copy { display: contents; }
 .launch-note { display: none; }
 .launch-more { display: none; }
-/* Two or more pieces of news: the pill grows into a small stacked card, one row per item, one dismiss for all */
+/* Two or more pieces of news: a small stacked card, links inline under each item, one close button top-right (Design, 28 Oct) */
+.launch-links { display: contents; }
 .launch-island.is-multi {
-  align-items: stretch;
+  display: block;
+  position: relative;
+  max-width: 640px;
   height: auto;
-  padding: 0 6px 0 0;
-  border-radius: 20px;
+  padding: 16px 52px 16px 20px;
+  border-radius: 14px;
   white-space: normal;
 }
 .launch-island.is-multi .launch-list { display: block; min-width: 0; }
-.launch-island.is-multi .launch-item { display: flex; align-items: center; gap: 10px; padding: 10px 12px 10px 10px; }
-.launch-island.is-multi .launch-item + .launch-item { border-top: 1px solid var(--line); }
-.launch-island.is-multi .launch-copy { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1 1 auto; }
-.launch-island.is-multi .launch-text { overflow: visible; }
-.launch-island.is-multi .launch-note { display: block; color: var(--muted); font-size: 14px; line-height: 1.4; max-width: 52ch; text-wrap: pretty; }
-.launch-island.is-multi .launch-more { display: block; width: fit-content; margin-top: 2px; font-size: 14px; line-height: 1.4; }
-.launch-island.is-multi .launch-icon { align-self: flex-start; margin-top: -2px; }
-.launch-island.is-multi .launch-link { margin-left: 8px; white-space: nowrap; }
-.launch-island.is-multi .launch-sep { height: auto; margin: 10px 0; }
-.launch-island.is-multi .launch-close { align-self: flex-start; margin-top: 8px; }
+.launch-island.is-multi .launch-item { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 12px; }
+.launch-island.is-multi .launch-item + .launch-item { border-top: 1px solid var(--line); padding-top: 14px; margin-top: 14px; }
+.launch-island.is-multi .launch-copy { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.launch-island.is-multi .launch-text { overflow: visible; font-weight: 600; }
+.launch-island.is-multi .launch-note { display: block; color: var(--muted); font-size: 14px; line-height: 1.45; text-wrap: pretty; }
+.launch-island.is-multi .launch-links { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 6px; font-size: 14px; line-height: 1.4; }
+.launch-island.is-multi .launch-link { font-weight: 600; white-space: nowrap; }
+.launch-island.is-multi .launch-more { display: inline; font-weight: 400; white-space: nowrap; }
+.launch-island.is-multi .launch-sep { display: none; }
+.launch-island.is-multi .launch-close { position: absolute; top: 10px; right: 10px; width: 32px; height: 32px; }
 @media (max-width: 600px) {
-  .launch-island.is-multi .launch-item { flex-wrap: wrap; row-gap: 4px; padding-right: 8px; }
-  .launch-island.is-multi .launch-copy { flex-basis: calc(100% - 34px); }
-  .launch-island.is-multi .launch-link { margin-left: 34px; }
+  .launch-island.is-multi { padding: 16px 48px 16px 16px; }
   .launch-island.is-multi .launch-note { font-size: 13px; }
-  .launch-island.is-multi .launch-more { font-size: 13px; }
+  /* the close button sits only at the top, so the link row may use the space under it and stays on one line */
+  .launch-island.is-multi .launch-links { margin-right: -36px; }
 }
 .launch-sep { width: 1px; height: 18px; background: var(--line); flex: none; }
 .launch-close {
