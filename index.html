@@ -95,7 +95,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@600&family=IBM+Plex+Sans:wght@400;500&display=swap">
-<link rel="stylesheet" href="/assets/css/site.css?v=20261023d">
+<link rel="stylesheet" href="/assets/css/site.css?v=20261028a">
 <script src="/assets/js/launch.js?v=20261022b" defer></script>
 </head>
 <body>
@@ -120,15 +120,15 @@
     <div class="wrap">
       <!-- Launch island: edit only this config for the next launch (new id shows it again). One entry in "items" per piece of news. -->
       <script type="application/json" id="launch-config">
-        {"id": "news-2026-10-bilat-tlu-windows", "until": "2026-11-30",
+        {"id": "news-2026-10-bilat-ok-meydani", "until": "2026-11-30",
          "items": [
-          {"icon": "/assets/apps/bilat.png", "text": "Bil At! is live on Google Play", "linkLabel": "Get it ↗", "href": "https://play.google.com/store/apps/details?id=com.steadylinelabs.bilat"},
+          {"icon": "/assets/apps/bilat.png", "text": "New in Bil At!: Ok Meydanı, 3D archery on the steppe is live", "note": "Three rounds of archery with no questions, by day or by night. Free, and it plays offline.", "more": {"label": "Read the Lab note", "href": "/notes/#bil-at-1-3-0-ok-meydani"}, "linkLabel": "Get it ↗", "href": "https://play.google.com/store/apps/details?id=com.steadylinelabs.bilat"},
           {"icon": "/assets/apps/tether-link-utility.png", "text": "Tether Link Utility: new Windows setup", "note": "One file to install, and every app on your PC now shares your phone's connection. New Windows and Mac videos in the guide.", "linkLabel": "See the guide ↗", "href": "https://tetherlinkutility.com/blog/socks5-proxy-setup-windows-macos-ios.html"}
          ],
          "colors": ["#15171A", "#4FB0E3", "#BFE2F4", "#E8622A"]}
       </script>
       <div class="launch-island" id="launch-island" role="region" aria-label="News" hidden></div>
-      <script>(function(){var el=document.getElementById('launch-island'),c;try{c=JSON.parse(document.getElementById('launch-config').textContent);}catch(e){return;}var d=null;try{d=localStorage.getItem('slab-launch-dismissed');}catch(e){}if(d===c.id||Date.now()>Date.parse(c.until+'T23:59:59'))return;function n(t,cl,tx){var e=document.createElement(t);if(cl)e.className=cl;if(tx)e.textContent=tx;return e;}var it=c.items||[c],l=n('ul','launch-list');it.forEach(function(x){var li=n('li','launch-item'),i=n('img','launch-icon');i.src=x.icon;i.alt='';i.width=24;i.height=24;var w=n('span','launch-copy');w.append(n('span','launch-text',x.text));if(x.note)w.append(n('span','launch-note',x.note));var a=n('a','launch-link',x.linkLabel);a.href=x.href;a.rel='noopener';li.append(i,w,a);l.append(li);});if(it.length>1)el.classList.add('is-multi');var b=n('button','launch-close');b.type='button';b.setAttribute('aria-label','Dismiss news');b.innerHTML='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>';el.append(l,n('span','launch-sep'),b);el.hidden=false;})();</script>
+      <script>(function(){var el=document.getElementById('launch-island'),c;try{c=JSON.parse(document.getElementById('launch-config').textContent);}catch(e){return;}var d=null;try{d=localStorage.getItem('slab-launch-dismissed');}catch(e){}if(d===c.id||Date.now()>Date.parse(c.until+'T23:59:59'))return;function n(t,cl,tx){var e=document.createElement(t);if(cl)e.className=cl;if(tx)e.textContent=tx;return e;}var it=c.items||[c],l=n('ul','launch-list');it.forEach(function(x){var li=n('li','launch-item'),i=n('img','launch-icon');i.src=x.icon;i.alt='';i.width=24;i.height=24;var w=n('span','launch-copy');w.append(n('span','launch-text',x.text));if(x.note)w.append(n('span','launch-note',x.note));if(x.more){var m=n('a','launch-more',x.more.label);m.href=x.more.href;w.append(m);}var a=n('a','launch-link',x.linkLabel);a.href=x.href;a.rel='noopener';li.append(i,w,a);l.append(li);});if(it.length>1)el.classList.add('is-multi');var b=n('button','launch-close');b.type='button';b.setAttribute('aria-label','Dismiss news');b.innerHTML='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>';el.append(l,n('span','launch-sep'),b);el.hidden=false;})();</script>
       <h1>Steadyline Labs</h1>
       <p class="tagline">We start ideas small and grow the ones people keep.</p>
       <div class="line-motif" aria-hidden="true"><div class="point"></div><div class="line"></div></div>

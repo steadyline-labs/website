@@ -293,6 +293,7 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; }
 .launch-item { display: contents; }
 .launch-copy { display: contents; }
 .launch-note { display: none; }
+.launch-more { display: none; }
 /* Two or more pieces of news: the pill grows into a small stacked card, one row per item, one dismiss for all */
 .launch-island.is-multi {
   align-items: stretch;
@@ -307,6 +308,7 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; }
 .launch-island.is-multi .launch-copy { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1 1 auto; }
 .launch-island.is-multi .launch-text { overflow: visible; }
 .launch-island.is-multi .launch-note { display: block; color: var(--muted); font-size: 14px; line-height: 1.4; max-width: 52ch; text-wrap: pretty; }
+.launch-island.is-multi .launch-more { display: block; width: fit-content; margin-top: 2px; font-size: 14px; line-height: 1.4; }
 .launch-island.is-multi .launch-icon { align-self: flex-start; margin-top: -2px; }
 .launch-island.is-multi .launch-link { margin-left: 8px; white-space: nowrap; }
 .launch-island.is-multi .launch-sep { height: auto; margin: 10px 0; }
@@ -316,6 +318,7 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; }
   .launch-island.is-multi .launch-copy { flex-basis: calc(100% - 34px); }
   .launch-island.is-multi .launch-link { margin-left: 34px; }
   .launch-island.is-multi .launch-note { font-size: 13px; }
+  .launch-island.is-multi .launch-more { font-size: 13px; }
 }
 .launch-sep { width: 1px; height: 18px; background: var(--line); flex: none; }
 .launch-close {
