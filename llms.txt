@@ -3,7 +3,7 @@
 > Steadyline Labs is an independent lab for ideas. Each idea first comes to life as a lean product, usually mobile because it is the fastest way to real users. We watch how people react, and the ones that resonate grow into full products.
 
 ## Products
-- Tether Link Utility: https://tetherlinkutility.com/ : share your phone's mobile data with laptops, tablets and other phones. QR setup, no root, no account. Android on Google Play (https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility); iOS coming soon. Overview: https://steadylinelabs.com/tether-link-utility/ . More detail: https://tetherlinkutility.com/llms.txt
+- Tether Link Utility: https://tetherlinkutility.com/ : share your phone's mobile data with laptops, tablets and other phones. QR setup, no root, no account. Android on Google Play (https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility) and iPhone on the App Store (https://apps.apple.com/app/id6821497184). Overview: https://steadylinelabs.com/tether-link-utility/ . More detail: https://tetherlinkutility.com/llms.txt
 - Bil At!: https://bilat.app/ : a quick-fire trivia game in Turkish, now with Ok Meydanı, a 3D archery mode. Android on Google Play (https://play.google.com/store/apps/details?id=com.steadylinelabs.bilat); iOS coming soon. Turkish only. Overview: https://steadylinelabs.com/bil-at/
 
 ## Links
