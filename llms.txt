@@ -4,7 +4,7 @@
 
 ## Products
 - Tether Link Utility: https://tetherlinkutility.com/ : share your phone's mobile data with laptops, tablets and other phones. Bypass carrier hotspot limits. QR setup, no root, no account. Live on Google Play (https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility); iOS coming soon. Overview: https://steadylinelabs.com/tether-link-utility/ . More detail: https://tetherlinkutility.com/llms.txt
-- Bil At!: https://bilat.app/ : a quick-fire trivia game in Turkish, now with Ok Meydanı, a 3D archery mode. Android on Google Play (https://play.google.com/store/apps/details?id=com.steadylinelabs.bilat) and iPhone on the App Store (https://apps.apple.com/tr/app/bil-at-bilgi-yar%C4%B1%C5%9Fmas%C4%B1/id6821452285). Turkish only. Overview: https://steadylinelabs.com/bil-at/
+- Bil At!: https://bilat.app/ : a quick-fire trivia game in Turkish with two archers (Alp and Banu), Ok Meydanı 3D archery, daily tasks and gifts, two rank paths, a shop and optional city weather. Android on Google Play (https://play.google.com/store/apps/details?id=com.steadylinelabs.bilat) and iPhone on the App Store (https://apps.apple.com/tr/app/bil-at-bilgi-yar%C4%B1%C5%9Fmas%C4%B1/id6821452285). Turkish only. Overview: https://steadylinelabs.com/bil-at/
 
 ## Links
 - Homepage: https://steadylinelabs.com/
