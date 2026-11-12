@@ -502,3 +502,8 @@ a:has(> .wa-icon) { display: inline-flex; align-items: center; gap: 6px; white-s
 .note-list { margin: 12px 0 0; padding-left: 20px; color: var(--ink2); }
 .note-list li { margin: 6px 0; }
 .note-list strong { color: var(--ink); font-weight: 500; }
+
+.clips { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 16px 0 24px; max-width: 800px; }
+.clip { margin: 0; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: var(--chip); }
+.clip video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; }
+@media (max-width: 560px) { .clips { grid-template-columns: repeat(2, minmax(0, 1fr)); } .clip:nth-child(3) { grid-column: 1 / -1; max-width: 50%; justify-self: center; } }
