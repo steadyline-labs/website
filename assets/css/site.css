@@ -476,3 +476,5 @@ h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; }
 a:has(> .wa-icon) { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
 .wa-icon { width: 16px; height: 16px; flex-shrink: 0; margin: 0 !important; vertical-align: baseline !important; }
 .site-footer nav a { white-space: nowrap; }
+.app-shot.is-strip { margin: 16px 0 24px; }
+.app-shot.is-strip img { aspect-ratio: auto; object-fit: contain; }
